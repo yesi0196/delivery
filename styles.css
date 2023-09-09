@@ -1,0 +1,68 @@
+/* Estilos para el mensaje de validación personalizado */
+input:invalid {
+    border: 2px solid rgb(230, 253, 20); /* Cambia el borde del campo a rojo */
+    background-color: rgb(236, 252, 145); /* Cambia el color de fondo del campo a rojo claro */
+}
+
+/* Estilos para el mensaje de validación personalizado en el elemento "input" */
+input:invalid::after {
+    content: attr(title); /* Muestra el mensaje personalizado */
+    color: #f00; /* Cambia el color del mensaje a rojo */
+    display: block; /* Muestra el mensaje en una línea separada */
+    font-size: 14px; /* Cambia el tamaño del texto del mensaje */
+}
+
+
+/* Estilos CSS para pantallas grandes */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #cccccc;
+    border: 15px solid #f55b2c;
+    margin: 10px;
+    padding: 0;
+}
+
+header {
+    background-color: #f55b2c;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos CSS para pantallas más pequeñas  */
+@media (max-width: 767px) {
+    body {
+        font-size: 16px; 
+    }
+
+    header {
+        padding: 5px; 
+    }
+
+    nav ul li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px; 
+    }
+
+    .container {
+        padding: 10px; 
+    }
+}

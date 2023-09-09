@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery de Comercios Adheridos</title>
+    <!-- Enlaza el archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Vincula el archivo JavaScript externo -->
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>DeliverEat!</h1>
+    </header>
+    
+    <div class="container">
+        <h2>¡Bienvenido a nuestro servicio de delivery!</h2>
+        <br>
+        <h3>Ingresa tu dirección de entrega</h3>
+        <form>
+            
+            <label for="calle">Calle:</label>
+            <input type="text" id="calle" name="calle" required>
+
+            <label for="numero">Número:</label>
+            <input type="text" id="numero" name="numero" required pattern="[0-9]+" min="1" maxlength="5">
+            
+            <label for="ciudad">Ciudad:</label>
+            <select id="ciudad" name="ciudad" required>
+                <option value="" disabled selected>Selecciona tu ciudad</option>
+                <option value="Ciudad 1">Cordoba</option>
+                <option value="Ciudad 2">La Falda</option>
+                <option value="Ciudad 3">Embalse</option>
+                <!-- Agrega más opciones de ciudades aquí -->
+            </select>
+            
+            <label for="referencia">Referencia (opcional):</label>
+            <textarea type="text" id="referencia" name="referencia" rows="2" cols="30"></textarea>
+
+
+            <h3>Forma de Pago:</h3>
+            <label for="formaPago">Selecciona la forma de pago:</label>
+            <select id="formaPago" name="formaPago" required>
+                <option value="Efectivo">Efectivo</option>
+                <option value="Tarjeta de Débito/Crédito">Tarjeta de Débito/Crédito</option>
+            </select><br><br>
+
+            <!-- Campos adicionales para pago en efectivo -->
+            <div id="pagoEfectivo" style="display: none;">
+                <label for="montoEfectivo">Monto en Efectivo:</label>
+                <input type="text" id="montoEfectivo" name="montoEfectivo" required pattern="[0-9]+" min="1">
+            </div>
+            
+            <!-- Campos adicionales para pago con tarjeta -->
+            <div id="pagoTarjeta" style="display: none;">
+                <label for="numeroTarjeta">Número de Tarjeta:</label>
+                <input type="text" id="numeroTarjeta" name="numeroTarjeta" required pattern="[0-9]+" min="1" maxlength="16">
+                
+                <label for="nombreTitular">Nombre del Titular:</label>
+                <input type="text" id="nombreTitular" name="nombreTitular" required>
+                
+                <label for="fechaVencimiento">Fecha de Vencimiento (MM/AAAA):</label>
+                <input type="text" id="fechaVencimiento" name="fechaVencimiento" required>
+                <br><br>
+                <label for="cvc">CVC:</label>
+                <input type="text" id="cvc" name="cvc" required pattern="[0-9]+" min="1" maxlength="3">
+            </div>
+            <!-- Agrega el siguiente código en tu formulario -->
+            <h3>¿Cuándo deseas recibir tu pedido?</h3>
+            <label for="entrega">Selecciona una opción:</label>
+            <select id="entrega" name="entrega" required>
+                <option value="Lo antes posible">Lo antes posible</option>
+                <option value="Fecha y hora específica">Fecha y hora específica</option>
+            </select><br><br>
+
+            <!-- Campo adicional para fecha/hora de recepción (inicialmente oculto) -->
+            <div id="fechaHoraEntrega" style="display: none;">
+                <label for="fecha">Fecha de recepción:</label>
+                <input type="date" id="fecha" name="fecha">
+    
+                <label for="hora">Hora de recepción:</label>
+                <input type="time" id="hora" name="hora">
+            </div>
+
+            <br><br>
+            <input type="submit" value="Confirmar">
+        </form>
+    </div>
+</body>
+</html>
